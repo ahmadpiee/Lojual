@@ -1,6 +1,7 @@
 package com.lojual;
 
 // com.myapp should be your package name
+import com.bugsnag.android.Bugsnag;
 import com.lojual.generated.BasePackageList;
 import android.app.Application;
 import android.content.Context;
@@ -59,6 +60,7 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    Bugsnag.start(this);
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }

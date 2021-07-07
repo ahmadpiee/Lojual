@@ -8,8 +8,13 @@ import AuthNavigator from './src/navigation/AuthNavigator';
 import OfflineNotice from './src/components/molecules/OfflineNotice';
 import AuthContext from './src/screens/auth/context';
 import authStorage from './src/screens/auth/storage';
+import logger from './src/utility/logger';
+
+logger.start();
 
 const App = () => {
+  // logger.log(new Error('Error in app'));
+
   const [user, setUser] = useState();
   useEffect(() => {
     const restoreUser = async () => {
